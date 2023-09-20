@@ -2,6 +2,16 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 50px;
+    background-color: #F3F8F6;
+}
+
+h1 {
+    color: #3A423F;
+    font-family: 'Croissant One', cursive;
+    background-color: #C4DED5;
+    padding: 0.5em;
+    border: 2px solid #3A423F;
+    border-radius: 10px;
 }
 
 button {
@@ -22,4 +32,8 @@ button {
     display: inline-block;
     margin-top: -5px;
     line-height: 0;
+}
+
+.trap {
+    background-color: #9e1503;
 }
