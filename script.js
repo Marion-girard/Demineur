@@ -80,65 +80,61 @@ block1.addEventListener('click', function(event) {
 
 
 
- const conter = 0;
- 
- const myPlateau = document.querySelectorAll('#plateau')
- console.log("le plateau :")
- console.log(myPlateau)
- for (let i = 0; i < myPlateau.length; i++) {
-     
-     myPlateau[i].addEventListener('click', async (event) => {
-         
-         
-         
-         event.preventDefault();
-         
+const conter = 0;
+
+const myPlateau = document.querySelectorAll('#plateau')
+console.log("le plateau :")
+console.log(myPlateau)
+for (let i = 0; i < myPlateau.length; i++) {
+
+    myPlateau[i].addEventListener('click', async (event) => {
+
+        event.preventDefault();
+        
          // On log l'élément qu'on a cliqué :
-         
-         const onClick = await Array(event.target.id)
-         let cellOnClick = {
-             x: parseInt(onClick[0][0]),
-             y: parseInt(onClick[0][2])
+        
+        const onClick = await Array(event.target.id)
+        let cellOnClick = {
+            x: parseInt(onClick[0][0]),
+            y: parseInt(onClick[0][2])
+        }
+        console.log(cellOnClick)
+        function chiffreCase(){
+            if( piegesGeneres.x == cellOnClick.x-1) {
+                conter ++ 
+                console.log("+1")
             }
-            console.log(cellOnClick)
-            function chiffreCase(){
-                
-                if( piegesGeneres.x == cellOnClick.x-1) {
-                    conter ++ 
-                     console.log("+1")
-            
-                }
-                 if( piegesGeneres.x == cellOnClick.x+1) {
-                    conter ++ 
-                     console.log("+1")
-                }
-                 if( piegesGeneres.y == cellOnClick.y+1) {
-                    conter ++ 
-                     console.log("+1")
-                }
-                 if( piegesGeneres.y == cellOnClick.y-1) {
-                    conter ++ 
-                     console.log("+1")
-                }
-                if( piegesGeneres.x == cellOnClick.x-1 && piegesGeneres.y == cellOnClick.y-1) {
-                    conter ++ 
-                     console.log("+1")
-                }
-                  if( piegesGeneres.x == cellOnClick.x-1 && piegesGeneres.y == cellOnClick.y+1) {
-                    conter ++ 
-                     console.log("+1")
-                }
-                 if( piegesGeneres.x == cellOnClick.x+1 && piegesGeneres.y == cellOnClick.y+1) {
-                    conter ++ 
-                     console.log("+1")
-                }
-                 if( piegesGeneres.x == cellOnClick.x+1 && piegesGeneres.y == cellOnClick.y-1) {
-                    conter ++ 
-                     console.log("+1")
-                }
-                if( piegesGeneres.x == cellOnClick.x && piegesGeneres.y == cellOnClick.y) {
-                     console.log("+1")
-                }
+            if( piegesGeneres.x == cellOnClick.x+1) {
+                conter ++ 
+                console.log("+1")
+            }
+            if( piegesGeneres.y == cellOnClick.y+1) {
+                conter ++ 
+                console.log("+1")
+            }
+            if( piegesGeneres.y == cellOnClick.y-1) {
+                conter ++ 
+                console.log("+1")
+            }
+            if( piegesGeneres.x == cellOnClick.x-1 && piegesGeneres.y == cellOnClick.y-1) {
+                conter ++ 
+                console.log("+1")
+            }
+            if( piegesGeneres.x == cellOnClick.x-1 && piegesGeneres.y == cellOnClick.y+1) {
+                conter ++ 
+                console.log("+1")
+            }
+            if( piegesGeneres.x == cellOnClick.x+1 && piegesGeneres.y == cellOnClick.y+1) {
+                conter ++ 
+                console.log("+1")
+            }
+            if( piegesGeneres.x == cellOnClick.x+1 && piegesGeneres.y == cellOnClick.y-1) {
+                conter ++ 
+                console.log("+1")
+            }
+            if( piegesGeneres.x == cellOnClick.x && piegesGeneres.y == cellOnClick.y) {
+                console.log("+1")
+            }
             return console.log("chiffreCase")
             }
         // event.target.style.backgroundColor = "#C4DED5"
@@ -155,7 +151,7 @@ block1.addEventListener('click', function(event) {
                 else if (piegesGeneres[b].x !== cellOnClick.x && piegesGeneres[b].y !== cellOnClick.y) {
                     console.log("tout va bien")
                     event.target.style.backgroundColor = "#C4DED5"
-                    return chiffreCase()
+                    chiffreCase()
 
                 }
             }
