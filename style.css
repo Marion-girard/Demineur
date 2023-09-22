@@ -12,14 +12,6 @@ h1 {
     margin: 0 auto;
 }
 
-/* button {
-  
-} */
-
-/* button:hover {
-    color: red */
-
-
 #timerDisplay {
     font-size: 36px;
     margin-top: 20px;
@@ -28,19 +20,17 @@ h1 {
 }
 
 .block {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: rgb(111, 111, 111);
     /*background-color: #C4DED5;*/
     border: 1px solid #0b0c0c;
     display: inline-block;
     margin-top: -5px;
-    line-height: 0;
+    /* line-height: 0; */
 }
 
-p {
-    margin-bottom: 3em;
-}
+
 
 .contour {
     background-color: rgb(180, 180, 180);
@@ -51,7 +41,7 @@ p {
     margin: 0.2em auto;
     border: 2px solid gray;
     box-shadow: 2px 2px rgb(69, 69, 69);
-    padding-bottom: 3em;
+    padding-bottom: 2em;
 }
 
 .tete {
@@ -67,16 +57,28 @@ p {
 
 h2 {
     font-family: 'Croissant One', cursive;
-    margin: 1em 0 0 0;
-    font-size: 2em;
+    margin: 0.5em 0 0 0;
+    font-size: 1.8em;
     color: rgb(255, 0, 0);
 }
 
 a {
     text-decoration: none;
-    color:  rgb(58, 113, 2);
+    color: rgb(58, 113, 2);
     margin-top: 0;
-    border: 3px solid  rgb(58, 113, 2);
-    font-size: 0.7em;
-    padding: 0.2em;
+    border: 3px solid rgb(58, 113, 2);
+    font-size: 0.6em;
+    padding: 0.2em 0.6em;
+}
+
+#plateau {
+    margin: 0 auto;
+    max-width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+p {
+    color: red;
+
 }

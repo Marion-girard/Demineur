@@ -54,37 +54,6 @@ console.log(piegesGeneres);
 
 console.log(caseId)
 
-/*const myPlateau = document.querySelectorAll('#plateau')
-
-for (let c = 0; c <  myPlateau.length; c++){
-if(caseId.i == piegesGeneres.x && caseId.j == piegesGeneres.y)
-{
-    console.log("piège")
-}
-else{" tous va bien"}
-}*/
-//changement de couleur des case
-/*const block = document.getElementById("0-0");
-const block1 = document.getElementById("1-0");
-const block2 = document.getElementById("2-0");
-
-const block3 = document.getElementById("3-0");
-
-block1.addEventListener('click', function(event) {
-    console.log("je clique")
-    event.preventDefault();
-    // On log l'élément qu'on a cliqué :
-    console.log(event.target);
-    
-    block1.style.backgroundColor = "#C4DED5"
-});*/
-
-
-
-
-
-
-let conter = 0;
 
 const myPlateau = document.querySelectorAll('#plateau')
 console.log("le plateau :")
@@ -93,7 +62,7 @@ for (let i = 0; i < myPlateau.length; i++) {
 
     myPlateau[i].addEventListener('click', async (event) => {
 
-
+        let conter = 0;
 
         event.preventDefault();
 
@@ -104,7 +73,7 @@ for (let i = 0; i < myPlateau.length; i++) {
             x: parseInt(onClick[0][0]),
             y: parseInt(onClick[0][2])
         }
-        console.log(piegesGeneres[1].x)
+        //console.log(piegesGeneres[1].x)
 
         // event.target.style.backgroundColor = "#C4DED5"
         function detectionPiege() {
@@ -119,70 +88,61 @@ for (let i = 0; i < myPlateau.length; i++) {
                     </a>`
 
                 }
-                else if (piegesGeneres[b].x !== cellOnClick.x && piegesGeneres[b].y !== cellOnClick.y) {
+                else if (piegesGeneres[b].x !== cellOnClick.x || piegesGeneres[b].y !== cellOnClick.y) {
                     //console.log("tout va bien")
                     event.target.style.backgroundColor = "#D0D0D0"
-                    // console.log("cellOnClick.x");
-                    // console.log(cellOnClick.x);
-                    // console.log("piegesGeneres[b].x")
-                    // console.log(piegesGeneres[b].x)
+
                     function chiffreCase() {
 
-                        /*if (piegesGeneres[b].x == (cellOnClick.x - 1)) {
+                        if (piegesGeneres[b].x === (cellOnClick.x - 1) && cellOnClick.y === piegesGeneres[b].y) {
                             conter++
-                            //return console.log("Bombe à gauche" + conter)
+                            console.log("Bombe à gauche" + conter)
 
-                        }*/
-                        /*if (piegesGeneres[b].x == (cellOnClick.x + 1)) {
+                        }
+                        if (piegesGeneres[b].x === (cellOnClick.x + 1) && cellOnClick.y === piegesGeneres[b].y) {
                             conter++
-                            //return console.log("Bombe à droite " + conter)
-                        }*/
-                        // console.log("cellOnClick.x")
-                        // console.log(cellOnClick.x)
-                        // console.log("piegesGeneres[b].x")
-                        // console.log(piegesGeneres[b].x)
+                            console.log("Bombe à droite " + conter)
+                        }
+                        if (piegesGeneres[b].y === (cellOnClick.y - 1) && cellOnClick.x === piegesGeneres[b].x) {
+                            conter++
+                            console.log("Bombe en haut" + conter)
+                        }
 
-                        // console.log("cellOnClick.y")
-                        // console.log(cellOnClick.y == piegesGeneres[b].y)
+                        if (piegesGeneres[b].y === (cellOnClick.y + 1) && cellOnClick.x === piegesGeneres[b].x) {
+                            conter++
+                            console.log("Bombe en bas" + conter)
+                        }
 
-                        if (cellOnClick.y - 1 === piegesGeneres[b].y && cellOnClick.x !== piegesGeneres[b].x) {
+                        if (piegesGeneres[b].x === cellOnClick.x - 1 && piegesGeneres[b].y === (cellOnClick.y - 1)) {
                             conter++
-                            return console.log("Bombe en haut")
+                            console.log(" diagonal haut gauche" + conter)
                         }
-                        /*  if (piegesGeneres[b].y == (cellOnClick.y - 1)) {
-                              conter++
-                              //return console.log("Bombe en bas" + conter)
-                          }*/
-                        /*if (piegesGeneres[b].x  == cellOnClick.x - 1 && piegesGeneres[b].y  == cellOnClick.y - 1) {
+                        if (piegesGeneres[b].x === (cellOnClick.x + 1) && piegesGeneres[b].y === (cellOnClick.y + 1)) {
                             conter++
-                            return console.log(" diagonal -1x -1y")
+                            console.log("diagonal bas droite " + conter)
                         }
-                        if (piegesGeneres[b].x  == cellOnClick.x + 1 && piegesGeneres[b].y  == cellOnClick.y + 1) {
+                        if (piegesGeneres[b].x === (cellOnClick.x - 1) && piegesGeneres[b].y === (cellOnClick.y + 1)) {
                             conter++
-                            return console.log("diagonal +1x + 1y")
+                            console.log("diagonal bas gauche " + conter)
                         }
-                        if (piegesGeneres[b].x   == cellOnClick.x - 1 && piegesGeneres[b].y  == cellOnClick.y + 1) {
+                        if (piegesGeneres[b].x === (cellOnClick.x + 1) && piegesGeneres[b].y === (cellOnClick.y - 1)) {
                             conter++
-                            return  console.log("diagonal -1x + 1x")
+                            console.log("diagonal haut droite" + conter)
                         }
-                        if (piegesGeneres[b].x   == cellOnClick.x  + 1 && piegesGeneres[b].y == cellOnClick.y - 1) {
-                            conter++
-                            return console.log("diagonal +1x -1y")
+                        else {
+
+                            console.log(conter)
                         }
-                        if (piegesGeneres[b].x == cellOnClick.x && piegesGeneres[b].y == cellOnClick.y) {
-                            return console.log("piège")
-                        }*/
-                        //return console.log("chiffreCase") 
-                        /*if (piegesGeneres[b].y != (cellOnClick.y - 1) && piegesGeneres[b].x != (cellOnClick.x - 1) && piegesGeneres[b].x != (cellOnClick.x + 1) && piegesGeneres[b].y != (cellOnClick.y + 1)) {
-                            conter = 0;
-                            //return console.log("pas de bombe autour" + conter)
-                        }*/
-                        conter = 0;
-                        // return console.log("chiffreCase")
+                        return conter
+
+
                     }
                     chiffreCase()
+                    event.target.innerHTML = `<p>${conter}</p>`;
+
 
                 }
+
             }
         }
         detectionPiege()
@@ -190,20 +150,7 @@ for (let i = 0; i < myPlateau.length; i++) {
 }
 // 10
 
-/*
-for ( piegesGeneres= x-1; j <= x+1; j++) {
-if (j == 0 || j == (this.settings['columns'] + 1)) {
-continue;
-}
-for (k = y-1; k <= y+1; k++) {
-if (k == 0 || k == (this.settings['lines'] + 1)) {
-continue;
-}
-if (this.game.field[j][k] != -1) {
-this.game.field[j][k] ++;
-}
-}
-*/
+
 
 let timer;
 let timerIsRunning = false;
