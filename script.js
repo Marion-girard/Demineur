@@ -75,11 +75,6 @@ block1.addEventListener('click', function(event) {
     block1.style.backgroundColor = "#C4DED5"
 });*/
 
-
-
-
-
-
 const conter = 0;
 
 const myPlateau = document.querySelectorAll('#plateau')
@@ -99,12 +94,14 @@ for (let i = 0; i < myPlateau.length; i++) {
             y: parseInt(onClick[0][2])
         }
         console.log(cellOnClick)
+
         function chiffreCase(){
+            console.log(piegesGeneres.x)
             if( piegesGeneres.x == cellOnClick.x-1) {
                 conter ++ 
                 console.log("+1")
             }
-            if( piegesGeneres.x == cellOnClick.x+1) {
+            /* if( piegesGeneres.x == cellOnClick.x+1) {
                 conter ++ 
                 console.log("+1")
             }
@@ -134,9 +131,11 @@ for (let i = 0; i < myPlateau.length; i++) {
             }
             if( piegesGeneres.x == cellOnClick.x && piegesGeneres.y == cellOnClick.y) {
                 console.log("+1")
-            }
+            }*/
+
             return console.log("chiffreCase")
             }
+
         // event.target.style.backgroundColor = "#C4DED5"
         function detectionPiege() {
             for (let b = 0; b < piegesGeneres.length; b++) {
@@ -149,10 +148,10 @@ for (let i = 0; i < myPlateau.length; i++) {
 
                 }
                 else if (piegesGeneres[b].x !== cellOnClick.x && piegesGeneres[b].y !== cellOnClick.y) {
-                    console.log("tout va bien")
                     event.target.style.backgroundColor = "#C4DED5"
+                    console.log("tout va bien")
+                    
                     chiffreCase()
-
                 }
             }
         }
